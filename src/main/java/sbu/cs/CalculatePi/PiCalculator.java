@@ -1,5 +1,4 @@
 package sbu.cs.CalculatePi;
-
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
@@ -28,22 +27,10 @@ public class PiCalculator {
 
         @Override
         public void run() {
-            BigDecimal numerator = factorial(6 * n).multiply(new BigDecimal(545140134).multiply(new BigDecimal(n)).add(new BigDecimal(13591409)));
-            if (n % 2 == 1) {
-                numerator = numerator.negate();
-            }
-            //It is not possible to use the decimal exponent in the BigDecimal package, so we use the logarithm to calculate it
-            BigDecimal exponent = new BigDecimal(3).multiply(new BigDecimal(n)).add(new BigDecimal("1.5"));
-            BigDecimal base = new BigDecimal("640320");
-            BigDecimal basePow = base.pow(exponent.intValue(), mc);
-            BigDecimal fracPart = exponent.subtract(new BigDecimal(exponent.intValue()));
-            if (fracPart.compareTo(BigDecimal.ZERO) != 0) {
-                BigDecimal logBase = new BigDecimal(Math.log(base.doubleValue()), mc);
-                BigDecimal logResult = logBase.multiply(fracPart, mc);
-                basePow = basePow.multiply(new BigDecimal(Math.exp(logResult.doubleValue()), mc), mc);
-            }
-            BigDecimal denominator = factorial(3 * n).multiply(factorial(n).pow(3)).multiply(basePow, mc);
-            x = numerator.divide(denominator, mc);
+            BigDecimal nValue=new BigDecimal(n);
+            BigDecimal numerator=factorial(4*n).multiply(new BigDecimal(1103).add(new BigDecimal(26390).multiply(nValue),mc),mc);
+            BigDecimal  denominator=factorial(n).pow(4).multiply(new BigDecimal(396).pow(4*n),mc);
+            x=numerator.divide(denominator,mc);
             addToSum(x);
         }
     }
@@ -56,8 +43,9 @@ public class PiCalculator {
     }
 
     public String calculate(int floatingPoint) {
+        BigDecimal C = new BigDecimal(2).multiply(new BigDecimal(2).sqrt(mc),mc).divide(new BigDecimal(9801),mc);
         ExecutorService threadPool = Executors.newFixedThreadPool(4);
-        for (int i = 0; i < 150; i++) {
+        for (int i = 0; i < 126; i++) {
             CalculatePi calculatePi = new CalculatePi(i);
             threadPool.execute(calculatePi);
         }
@@ -67,13 +55,13 @@ public class PiCalculator {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        BigDecimal result = sum.multiply(new BigDecimal(12), mc);
-        BigDecimal pi = new BigDecimal(1).divide(result, mc);
-        return pi.toPlainString().substring(0, floatingPoint + 2); // Adjust for decimal point and one leading digit
+        sum = sum.multiply(C, mc);
+        String pi = BigDecimal.ONE.divide(sum,mc).toPlainString();
+        return pi.substring(0, floatingPoint + 2);
     }
 
     public static void main(String[] args) {
         PiCalculator piCalculator = new PiCalculator();
-        System.out.println(piCalculator.calculate(30));
+        System.out.println(piCalculator.calculate(10));
     }
 }
