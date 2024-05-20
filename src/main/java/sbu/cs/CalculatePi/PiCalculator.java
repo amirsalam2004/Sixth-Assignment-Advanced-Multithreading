@@ -25,25 +25,12 @@ public class PiCalculator {
             return result;
         }
 
-        private BigDecimal bigDecimalPow(BigDecimal base, BigDecimal exponent) {
-            BigDecimal logBase = new BigDecimal(Math.log(base.doubleValue()), mc);
-            BigDecimal logResult = logBase.multiply(exponent, mc);
-            return new BigDecimal(Math.exp(logResult.doubleValue()), mc);
-        }
-
         @Override
         public void run() {
-            BigDecimal numerator = factorial(6 * n)
-                    .multiply(new BigDecimal(545140134, mc)
-                            .multiply(new BigDecimal(n), mc)
-                            .add(new BigDecimal(13591409, mc)));
-            if (n % 2 == 1) {
-                numerator = numerator.negate();
-            }
-            BigDecimal exponent = new BigDecimal(3).multiply(new BigDecimal(n)).add(new BigDecimal(1.5));
-            BigDecimal basePow = bigDecimalPow(new BigDecimal("640320"), exponent);
-            BigDecimal denominator = factorial(3 * n).multiply(factorial(n).pow(3).multiply(basePow, mc));
-            x = numerator.divide(denominator, mc);
+            BigDecimal nValue=new BigDecimal(n);
+            BigDecimal numerator=factorial(4*n).multiply(new BigDecimal(1103).add(new BigDecimal(26390).multiply(nValue),mc),mc);
+            BigDecimal  denominator=factorial(n).pow(4).multiply(new BigDecimal(396).pow(4*n),mc);
+            x=numerator.divide(denominator,mc);
             addToSum(x);
         }
     }
@@ -56,9 +43,9 @@ public class PiCalculator {
     }
 
     public String calculate(int floatingPoint) {
-        BigDecimal C = new BigDecimal("426880").multiply(new BigDecimal("10005").sqrt(mc));
+        BigDecimal C = new BigDecimal(2).multiply(new BigDecimal(2).sqrt(mc),mc).divide(new BigDecimal(9801),mc);
         ExecutorService threadPool = Executors.newFixedThreadPool(4);
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 200; i++) {
             CalculatePi calculatePi = new CalculatePi(i);
             threadPool.execute(calculatePi);
         }
@@ -68,8 +55,8 @@ public class PiCalculator {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        sum = sum.multiply(new BigDecimal(12), mc);
-        String pi = C.divide(sum, mc).toPlainString();
+        sum = sum.multiply(C, mc);
+        String pi = BigDecimal.ONE.divide(sum,mc).toPlainString();
         return pi.substring(0, floatingPoint + 2);
     }
 
