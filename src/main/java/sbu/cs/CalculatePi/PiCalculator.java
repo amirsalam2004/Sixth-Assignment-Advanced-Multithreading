@@ -7,6 +7,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class PiCalculator {
+    //The calculation is done with the Ramanujan's series
 
     public static class CalculatePi implements Runnable {
         BigDecimal x;
@@ -65,3 +66,4 @@ public class PiCalculator {
         System.out.println(piCalculator.calculate(10));
     }
 }
+
