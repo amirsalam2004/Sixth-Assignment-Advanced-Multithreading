@@ -19,7 +19,7 @@ Again in 2010 and 2011, it reach 10 billion digits of π, and finally in 2022 10
 3. [**Bailey–Borwein–Plouffe (BBP) Algorithm:**](https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula)
 The BBP formula, discovered by Bailey, Borwein, and Plouffe in 1995, allows for the efficient computation of individual hexadecimal digits of π.
 The formula is given by:\
-![BBP](https://latex.codecogs.com/svg.image?\inline&space;\huge&space;\bg{red}\pi=\sum_{k=0}^{\infty}\frac{1}{16^k}\left(\frac{4}{8k&plus;1}-\frac{2}{8k&plus;4}-\frac{1}{8k&plus;5}-\frac{1}{8k&plus;6}\right))\
+![BBP](https://latex2png.com/pngs/842400347b7b1753d6c975c8879a2248.png)\
    This remarkable formula calculates one hexadecimal digit of π per term in the series, making it highly efficient for digit extraction and computation.
 
 * The Chudnovsky and Ramanujan series first calculate 1/π, but the BBP series directly calculates π.
