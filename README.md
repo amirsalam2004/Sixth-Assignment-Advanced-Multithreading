@@ -6,19 +6,21 @@ In this assignment, we will examine 3 algorithms (Chudnovsky, Ramanujan and BBP)
 **_and_** Write a simple program with semaphore.
 ## Algorithms for calculating π 📊
 1. [**Ramanujan's Series:**](https://en.wikipedia.org/wiki/Ramanujan%E2%80%93Sato_series)
-   Ramanujan was an Indian self-study mathematician who around 1910, quite astonished, invented the following infinite series formula for π\\
+   Ramanujan was an Indian self-study mathematician who around 1910, quite astonished, invented the following infinite series formula for π\
 ![Ramanujan](https://latex2png.com/pngs/33fd09365a2b2ed9d7f7f7a171997319.png)\
 For each term in the series, it produces approx eight more correct digits of π.
 In the quest for calculating π, this particular formula was used in 1985 to calculate approx 17 million digits of π.
+
 2. [**Chudnovsky Algorithm:**](https://en.wikipedia.org/wiki/Chudnovsky_algorithm)
-   Chudnovsky brother found a variation of the Ramanujan infinite series for π in 1989 using the infinite series:\\
+   Chudnovsky brother found a variation of the Ramanujan infinite series for π in 1989 using the infinite series:\
 ![Chudnovsky Algorithm](https://latex2png.com/pngs/842400347b7b1753d6c975c8879a2248.png)\
 For each term in the series, it produces approx. 14 more correct digits of π, 
 which is six digits more than the Ramanujan series per term. In 1994, the formula was used to calculate approx 4 billion digits of π. 
 Again in 2010 and 2011, it reach 10 billion digits of π, and finally in 2022 100 trillion digits of π.
+
 3. [**Bailey–Borwein–Plouffe (BBP) Algorithm:**](https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula)
 The BBP formula, discovered by Bailey, Borwein, and Plouffe in 1995, allows for the efficient computation of individual hexadecimal digits of π.
-The formula is given by:\\
+The formula is given by:\
 ![BBP](https://latex2png.com/pngs/e048090ef9c4b6b14f7960074867d449.png)\
    This remarkable formula calculates one hexadecimal digit of π per term in the series, making it highly efficient for digit extraction and computation.
 
