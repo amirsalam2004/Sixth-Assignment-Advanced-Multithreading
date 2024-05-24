@@ -6,20 +6,20 @@ In this assignment, we will examine 3 algorithms (Chudnovsky, Ramanujan and BBP)
 **_and_** Write a simple program with semaphore.
 ## Algorithms for calculating π 📊
 1. [**Ramanujan's Series:**](https://en.wikipedia.org/wiki/Ramanujan%E2%80%93Sato_series)
-   Ramanujan was an Indian self-study mathematician who around 1910, quite astonished, invented the following infinite series formula for π
-![Ramanujan](https://latex.codecogs.com/svg.image?\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^{\infty}\frac{(4k)!(1103&plus;26390k)}{(k!)^4&space;396^{4k}})
+   Ramanujan was an Indian self-study mathematician who around 1910, quite astonished, invented the following infinite series formula for π\
+![Ramanujan](https://latex.codecogs.com/svg.image?\inline&space;\huge&space;\bg{white}\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^{\infty}\frac{(4k)!(1103&plus;26390k)}{(k!)^4&space;396^{4k}})\
 For each term in the series, it produces approx eight more correct digits of π.
 In the quest for calculating π, this particular formula was used in 1985 to calculate approx 17 million digits of π.
 2. [**Chudnovsky Algorithm:**](https://en.wikipedia.org/wiki/Chudnovsky_algorithm)
-   Chudnovsky brother found a variation of the Ramanujan infinite series for π in 1989 using the infinite series:
-![Chudnovsky Algorithm](https://latex.codecogs.com/svg.image?\frac{1}{\pi}=12\sum_{k=0}^{\infty}\frac{(-1)^k\cdot(6k)!\cdot(545140134k&plus;13591409)}{(3k)!\cdot(k!)^3\cdot&space;640320^{3k&plus;3/2}})
+   Chudnovsky brother found a variation of the Ramanujan infinite series for π in 1989 using the infinite series:\
+![Chudnovsky Algorithm](https://latex.codecogs.com/svg.image?\inline&space;\huge&space;\bg{white}\frac{1}{\pi}=12\sum_{k=0}^{\infty}\frac{(-1)^k\cdot(6k)!\cdot(545140134k&plus;13591409)}{(3k)!\cdot(k!)^3\cdot&space;640320^{3k&plus;3/2}})\
 For each term in the series, it produces approx. 14 more correct digits of π, 
 which is six digits more than the Ramanujan series per term. In 1994, the formula was used to calculate approx 4 billion digits of π. 
 Again in 2010 and 2011, it reach 10 billion digits of π, and finally in 2022 100 trillion digits of π.
 3. [**Bailey–Borwein–Plouffe (BBP) Algorithm:**](https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula)
 The BBP formula, discovered by Bailey, Borwein, and Plouffe in 1995, allows for the efficient computation of individual hexadecimal digits of π.
-The formula is given by:
-![BBP](https://latex.codecogs.com/svg.image?\pi=\sum_{k=0}^{\infty}\frac{1}{16^k}\left(\frac{4}{8k&plus;1}-\frac{2}{8k&plus;4}-\frac{1}{8k&plus;5}-\frac{1}{8k&plus;6}\right))
+The formula is given by:\
+![BBP](https://latex.codecogs.com/svg.image?\inline&space;\huge&space;\bg{white}\pi=\sum_{k=0}^{\infty}\frac{1}{16^k}\left(\frac{4}{8k&plus;1}-\frac{2}{8k&plus;4}-\frac{1}{8k&plus;5}-\frac{1}{8k&plus;6}\right))\
    This remarkable formula calculates one hexadecimal digit of π per term in the series, making it highly efficient for digit extraction and computation.
 
 * The Chudnovsky and Ramanujan series first calculate 1/π, but the BBP series directly calculates π.
