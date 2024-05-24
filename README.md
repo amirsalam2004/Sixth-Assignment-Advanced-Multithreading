@@ -25,6 +25,7 @@ The formula is given by:\
    This remarkable formula calculates one hexadecimal digit of π per term in the series, making it highly efficient for digit extraction and computation.
 
 * The Chudnovsky and Ramanujan series first calculate 1/π, but the BBP series directly calculates π.
+
 * **Approximately**, the convergence rate of these series can be compared like this:
 
 ![Comparison of convergence rates](Comparison.png)
